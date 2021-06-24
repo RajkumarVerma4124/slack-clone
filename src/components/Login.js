@@ -12,7 +12,7 @@ function Login() {
       <Head />
       <Section>
         <Hero>
-          <h1>It's the foundation for teamwork</h1>
+          <h1>Created By R.V</h1>
           <img src='images/slack.jpg' alt='' />
         </Hero>
         <Form>
@@ -28,37 +28,47 @@ function Login() {
 
 export default Login
 
-const Container = styled.div``
+const Container = styled.div`
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+`;
 
 const Section = styled.section`
   display: flex;
   align-content: start;
   min-height: 700px;
   padding-bottom: 138px;
-  padding-top: 40px;
-  padding: 60px 0;
+  padding: 60px 130px;
   position: relative;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1128px;
   align-items: center;
   margin: auto;
+  border-radius: 20px;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   @media (max-width: 768px) {
     margin: auto;
     min-height: 0px;
   }
-`
+`;
 const Hero = styled.div`
   width: 100%;
   align-items: center;
   h1 {
     padding-bottom: 0;
+    padding-left: 15px;
+    padding-top: 150px;
     width: 55%;
     font-size: 56px;
     color: #800080;
     font-weight: 200;
     line-height: 70px;
     z-index: 1;
+    
     @media (max-width: 768px) {
       text-align: center;
       font-size: 35px;
@@ -69,10 +79,11 @@ const Hero = styled.div`
 
   > img {
     width: 700px;
-    height: 670px;
+    height: 600px;
     position: absolute;
-    bottom: -2px;
-    right: -150px;
+    bottom: 150px;
+    right: 30px;
+    
     @media (max-width: 768px) {
       width: 700px;
       height: 670px;
@@ -85,8 +96,9 @@ const Hero = styled.div`
   }
 `
 const Form = styled.div`
-  margin-top: 100px;
-  width: 408px;
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 350px;
   @media (max-width: 768px) {
     margin-top: 400px;
   }
@@ -101,8 +113,9 @@ const Google = styled.button`
   height: 56px;
   width: 100%;
   border-radius: 28px;
-  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
-    inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0);
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   transition-duration: 167ms;
   img {
     object-fit: contain;
@@ -117,4 +130,4 @@ const Google = styled.button`
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 0.75);
   }
-`
+`;

@@ -1,18 +1,19 @@
 import firebase from 'firebase'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDJXVjACqHVqGgWeP-P_uJTKb1tDxsXqlI',
-  authDomain: 'slack-ktc.firebaseapp.com',
-  projectId: 'slack-ktc',
-  storageBucket: 'slack-ktc.appspot.com',
-  messagingSenderId: '898707712784',
-  appId: '1:898707712784:web:cd5655e49d8b64a3631395',
-}
+    apiKey: "AIzaSyAlocJ0o388MsALgF-TsxuLuqDbNeGE7o4",
+    authDomain: "slack-clone-rv.firebaseapp.com",
+    projectId: "slack-clone-rv",
+    storageBucket: "slack-clone-rv.appspot.com",
+    messagingSenderId: "984518278227",
+    appId: "1:984518278227:web:a63e6c1287c11abe195aa6",
+    measurementId: "G-FCN636GYZ8"
+};
 
 const app =
-  firebase.apps.length === 0
-    ? firebase.initializeApp(firebaseConfig)
-    : firebase.app()
+    firebase.apps.length === 0 ?
+    firebase.initializeApp(firebaseConfig) :
+    firebase.app()
 
 const db = app.firestore()
 const auth = app.auth()

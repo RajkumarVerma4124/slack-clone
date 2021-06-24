@@ -89,15 +89,16 @@ function Chat() {
         <>
           <ModalContent open={open} onClose={() => setOpen(false)}>
             <div style={modalStyle} className={classes.paper}>
-              <h1>Edit</h1>
+              <h1 style={{ color: "var(--slack-color)" , fontSize:"25px"}}>Edit</h1>
               <form>
                 <TextField
+                  style={{ border: "1px solid whitesmoke" , padding: "1px",}}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  variant='outlined'
+                  variant="outlined"
                   placeholder={roomDetails?.data().name}
                 />
-                <button onClick={editRoom} type='submit' />
+                <button onClick={editRoom} type="submit" />
               </form>
             </div>
           </ModalContent>
@@ -119,7 +120,7 @@ function Chat() {
           </Header>
           <ChatMessages>
             {roomMessages?.docs.map((doc) => {
-              const { message, timestamp, user, userImg } = doc.data()
+              const { message, timestamp, user, userImg } = doc.data();
               return (
                 <Message
                   key={doc.id}
@@ -128,7 +129,7 @@ function Chat() {
                   user={user}
                   userImg={userImg}
                 />
-              )
+              );
             })}
             <ChatBottom ref={chatRef} />
           </ChatMessages>
@@ -140,7 +141,7 @@ function Chat() {
         </>
       )}
     </Container>
-  )
+  );
 }
 
 export default Chat
@@ -150,12 +151,20 @@ const Container = styled.div`
   flex-grow: 1;
   overflow-y: scroll;
   margin-top: 70px;
-`
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+`;
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
   border-bottom: 1px solid lightgray;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  z-index: 999;
 `
 const HeaderLeft = styled.div`
   display: flex;
@@ -189,4 +198,16 @@ const ModalContent = styled(Modal)`
   div > form > button {
     display: none;
   }
-`
+
+  
+
+  div {
+    border-radius: 25px;
+    border-width: 0px;
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      margin-top: 10px;
+  }
+
+`;

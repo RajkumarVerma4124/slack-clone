@@ -25,7 +25,7 @@ function Sidebar() {
     <Container>
       <SidebarHeader>
         <SidebarInfo>
-          <h2>Brandon Slack</h2>
+          <h2>R.V. Slack-Clone 2.0</h2>
           <h3>
             <FiberManualRecord />
             {user.displayName}
@@ -34,23 +34,23 @@ function Sidebar() {
         <Create />
       </SidebarHeader>
       {/* Sidebar Option */}
-      <SidebarOption Icon={InsertComment} title='Threads' />
-      <SidebarOption Icon={Inbox} title='Mentions & reactions' />
-      <SidebarOption Icon={Drafts} title='saved items' />
-      <SidebarOption Icon={BookmarkBorder} title='Channel browser' />
-      <SidebarOption Icon={PeopleAlt} title='People & user groups' />
-      <SidebarOption Icon={Apps} title='Apps' />
-      <SidebarOption Icon={FileCopy} title='File browser' />
-      <SidebarOption Icon={ExpandLess} title='Show less' />
-      <hr />
-      <SidebarOption Icon={ExpandMore} title='Show more' />
-      <hr />
-      <SidebarOption Icon={Add} addChannelOption title='Add Channel' />
-      {channels?.docs.map((doc) => (
-        <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
-      ))}
+        <SidebarOption Icon={InsertComment} title="Threads" />
+        <SidebarOption Icon={Inbox} title="Mentions & reactions" />
+        <SidebarOption Icon={Drafts} title="saved items" />
+        <SidebarOption Icon={BookmarkBorder} title="Channel browser" />
+        <SidebarOption Icon={PeopleAlt} title="People & user groups" />
+        <SidebarOption Icon={Apps} title="Apps" />
+        <SidebarOption Icon={FileCopy} title="File browser" />
+        <SidebarOption Icon={ExpandLess} title="Show less" />
+        <hr />
+        <SidebarOption Icon={ExpandMore} title="Show more" />
+        <hr />
+        <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
+        {channels?.docs.map((doc) => (
+          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+        ))}
     </Container>
-  )
+  );
 }
 
 export default Sidebar
@@ -62,17 +62,26 @@ const Container = styled.div`
   border-top: 1px solid #49247b;
   flex: 0.3;
   background-color: var(--slack-color);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
 
   hr {
     border: 1px solid #49247b;
     margin-bottom: 10px;
     margin-top: 10px;
   }
-`
+`;
 const SidebarHeader = styled.div`
   display: flex;
   border-bottom: 1px solid #49247b;
   padding: 13px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--slack-color);
 
   > .MuiSvgIcon-root {
     padding: 8px;
@@ -81,7 +90,7 @@ const SidebarHeader = styled.div`
     background-color: white;
     border-radius: 50%;
   }
-`
+`;
 const SidebarInfo = styled.div`
   flex: 1;
 
@@ -105,3 +114,4 @@ const SidebarInfo = styled.div`
     }
   }
 `
+

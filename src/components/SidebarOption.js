@@ -48,6 +48,7 @@ const Container = styled.div`
   align-items: center;
   padding-left: 2px;
   cursor: pointer;
+
   :hover {
     opacity: 0.9;
     background-color: #340e36;
@@ -58,8 +59,8 @@ const Container = styled.div`
   h3 > span {
     padding: 15px;
   }
-`
+`;
 const SidebarOptionChannel = styled.h3`
   padding: 10px 0;
   font-weight: 300;
-`
+`;

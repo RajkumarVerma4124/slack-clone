@@ -23,6 +23,7 @@ const Container = styled.div`
   img {
     object-fit: contain;
     width: 150px;
+    
   }
 `
 const HeadButton = styled.div`

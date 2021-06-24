@@ -27,7 +27,7 @@ function Header() {
           <PowerSettingsNew onMouseOver={() => setShow(!show)} />
           {show && (
             <div onClick={() => auth.signOut()} className='header__signout'>
-              Sign out
+              Signout
             </div>
           )}
         </div>
@@ -99,20 +99,34 @@ const HeaderRight = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     .MuiSvgIcon-root {
       margin-left: auto;
       cursor: pointer;
+      margin-top: -5px;
       margin-right: 25px;
+      position: sticky;
     }
   }
   .header__signout {
-    background: #fff;
-    margin-top: 10px;
+    background: var(--slack-color);
+    margin-right: 60px;
+    margin-top: -29px;
     width: 75px;
+    height: 30px;
+    padding: 7px;
+    padding-bottom: 1px;
     cursor: pointer;
     text-align: center;
+    align-self: center;
+    justify-content: center;
     border-radius: 20px;
+    border: 1px solid lightgray;
+    z-index: 999;
     font-weight: 600;
-    color: var(--slack-color);
+    color: #fff;
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
-`
+`;

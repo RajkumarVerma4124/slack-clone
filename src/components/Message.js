@@ -3,15 +3,20 @@ import styled from 'styled-components'
 function Message({ message, timestamp, user, userImg }) {
   return (
     <Container>
-      <img src={userImg} alt='' />
+      <img src={userImg} alt="" />
       <MessageInfo>
         <h4>
-          {user} <span>{new Date(timestamp?.toDate()).toUTCString()}</span>
+          {user}{" "}
+          {timestamp ? (
+            <span>{new Date(timestamp?.toDate()).toUTCString()}</span>
+          ) : (
+            <span>loading...</span>
+          )}
         </h4>
         <p>{message}</p>
       </MessageInfo>
     </Container>
-  )
+  );
 }
 
 export default Message
